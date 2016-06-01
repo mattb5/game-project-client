@@ -5,7 +5,7 @@ const app = require('../app.js');
 const signUp = (data) => {
   return $.ajax (
   {
-  url: app.host + '/sign-up/',
+  url: app.host + '/sign-up',
   method: 'POST',
   data: data
   }
@@ -14,7 +14,7 @@ const signUp = (data) => {
 
 //line 9 and line 17 are doing the same thing, when we use single line
 
-const signIn = (signIndata) => {
+const signIn = (signInData) => {
   return $.ajax ({
     url: app.host + '/sign-in',
     method: 'POST',
