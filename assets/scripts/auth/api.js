@@ -68,6 +68,17 @@ const getGames = function () {
   });
 };
 
+const getGameById = function () {
+  return $.ajax(
+  {
+    url: app.host + '/games/8659',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
@@ -75,4 +86,5 @@ module.exports = {
   changePassword,
   createGame,
   getGames,
+  getGameById,
 };

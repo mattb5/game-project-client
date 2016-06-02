@@ -61,6 +61,14 @@ const onGetGames = function(event)
   .fail(ui.failure);
 };
 
+const onGetGameById = function(event)
+{
+  event.preventDefault();
+  api.getGameById()
+  .done(ui.successGetGames)
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
@@ -68,30 +76,9 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword);
   $('#create-game').on('submit', onCreateGame);
   $('#get-games').on('submit', onGetGames);
+  $('#get-game-by-id').on('submit', onGetGameById);
 };
 
-
-// const onChangePassword = function (event) {
-//   event.preventDefault();
-// //we pass data as in the form of the new function
-//   let data = getFormFields(event.target);
-//   api.changePassword(data)
-//   .done(ui.success)
-//   .fail(ui.failure);
-// };
-//
-// const addHandlers = () => {
-//   $('#sign-up').on('submit', onSignUp);
-//   $('#sign-in').on('submit', onSignIn);
-//   $('#sign-out').on('submit', onSignOut);
-//   $('#change-password').on('submit', onChangePassword);
-//
-// };
-  // function (event) {
-  //   let data = getFormFields(this);
-  //   event.preventDefault();
-  //   authApi.signUp(authUi.success, authUi.failure, data);
-  // });
 
 
 module.exports = {
