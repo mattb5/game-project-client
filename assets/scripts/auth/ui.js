@@ -19,6 +19,7 @@ const failure = (error) => {
 
 const signInSuccess = function (data){
 app.user = data.user;
+console.log(data);
 };
 
 const signOutSuccess = function (){
@@ -26,9 +27,17 @@ const signOutSuccess = function (){
   console.log(app);
 };
 
+// const onNewGameSuccess = function (){
+//   console.log(app.user.email, app.user.token);
+// };
+
+
+
+
 module.exports = {
   failure,
   success,
   signInSuccess,
   signOutSuccess,
+  // onNewGameSuccess,
 };

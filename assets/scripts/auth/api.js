@@ -45,6 +45,26 @@ const changePassword = function (data) {
   };
 
 
+const newGame = function (data){
+  return $.ajax({
+    url: app.host + '/games#create',
+    method : 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data: data
+  });
+};
+
+
+// const sendArray = function (data){
+//   return $.ajax ({
+//     url: app.host + '/sign-in',
+//     method: 'POST',
+//     data: signInData
+//   });
+// }
+
 // const changePassword = function (data) {
 //   return $.ajax ({
 //     url: app.host + '/changePassword/' + app.user.id,
@@ -61,4 +81,5 @@ module.exports = {
   signIn,
   signOut,
   changePassword,
+  newGame,
 };
