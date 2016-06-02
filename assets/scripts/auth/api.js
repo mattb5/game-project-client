@@ -57,10 +57,22 @@ const createGame = function () {
   });
 };
 
+const getGames = function () {
+  return $.ajax(
+  {
+    url: app.host + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
   createGame,
+  getGames,
 };

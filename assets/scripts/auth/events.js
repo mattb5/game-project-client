@@ -53,12 +53,21 @@ const onCreateGame = function(event)
   .fail(ui.failure);
 };
 
+const onGetGames = function(event)
+{
+  event.preventDefault();
+  api.getGames()
+  .done(ui.successGetGames)
+  .fail(ui.failure);
+};
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#create-game').on('submit', onCreateGame);
+  $('#get-games').on('submit', onGetGames);
 };
 
 

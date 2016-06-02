@@ -24,6 +24,17 @@ if(data)
  }
 };
 
+const successGetGames = (data) => {
+if(data)
+ {
+  console.log(data);
+ }
+ else
+ {
+  console.log("Got Games!");
+ }
+};
+
 const failure = (error) => {
   console.error(error);
 };
@@ -39,10 +50,12 @@ const signOutSuccess = function (){
 };
 
 
+
 module.exports = {
   failure,
   success,
   signInSuccess,
   signOutSuccess,
   successCreateGame,
+  successGetGames,
 };
