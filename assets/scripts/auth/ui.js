@@ -27,12 +27,6 @@ const signOutSuccess = function (){
   console.log(app);
 };
 
-// const onNewGameSuccess = function (){
-//   console.log(app.user.email, app.user.token);
-// };
-
-
-
 
 module.exports = {
   failure,

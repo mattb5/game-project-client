@@ -1,3 +1,4 @@
+
 'use strict';
 
 const getFormFields = require('../../../lib/get-form-fields');
@@ -37,21 +38,13 @@ const onChangePassword = function(event){
   .fail(ui.failure);
 };
 
-// let testArray = [0,1,3,4,5];
 
-const onNewGame = function (event){
-  event.preventDefault();
-  api.newGame()
-  .done(ui.onNewGameSuccess)
-  .fail(console.log("this failed"));
-};
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
-  $('#reset-game').on('submit', onNewGame);
 };
 
 
