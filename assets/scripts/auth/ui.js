@@ -13,6 +13,17 @@ if(data)
  }
 };
 
+const successCreateGame = (data) => {
+if(data)
+ {
+  console.log(data);
+ }
+ else
+ {
+  console.log("Created a game");
+ }
+};
+
 const failure = (error) => {
   console.error(error);
 };
@@ -33,5 +44,5 @@ module.exports = {
   success,
   signInSuccess,
   signOutSuccess,
-  // onNewGameSuccess,
+  successCreateGame,
 };

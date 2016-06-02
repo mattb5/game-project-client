@@ -15,7 +15,7 @@ const signUp = (data) => {
 //line 9 and line 17 are doing the same thing, when we use single line
 
 const signIn = (signInData) => {
-  console.log('this is the signInData call' );
+  console.log('this is the signInData' );
   console.log(signInData);
   return $.ajax ({
     url: app.host + '/sign-in',
@@ -46,9 +46,21 @@ const changePassword = function (data) {
     });
   };
 
+const createGame = function () {
+  return $.ajax(
+  {
+    url: app.host + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
+  createGame,
 };
