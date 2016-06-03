@@ -25,14 +25,15 @@ if(data)
 // };
 
 const successGetGames = (data) => {
-if(data)
- {
-  console.log(data);
- }
- else
- {
-  console.log("Got Games!");
- }
+// if(data)
+//  {
+//   console.log(data);
+  $("#GET-to-site").text(data);
+//  }
+//  else
+//  {
+//   console.log("Got Games!");
+//  }
 };
 
 const failure = (error) => {
