@@ -105,7 +105,17 @@ $( document ).ready(function() {
 							counter++;
 							console.log(gameArray);
 
-              
+
+              let data = {
+                  "game": {
+                    "cell": {
+                      "index": 0,
+                      "value": "o"
+                    },
+                    "over": false
+                }
+              };
+
 
               api.updateGame(data)
               .done(ui.createGameSuccess)
@@ -127,12 +137,41 @@ $( document ).ready(function() {
 						gameArray[1] = "x";
 						counter++;
 
+            let data = {
+                "game": {
+                  "cell": {
+                    "index": 1,
+                    "value": "x"
+                  },
+                  "over": false
+              }
+            };
+
+            api.updateGame(data)
+            .done(ui.createGameSuccess)
+            .then(console.log('milk'))
+            .fail(ui.failure);
 		    }
 				else
 				{
 		        $(this).addClass('oBox');
 						gameArray[1] = "o";
 						counter++;
+
+            let data = {
+                "game": {
+                  "cell": {
+                    "index": 1,
+                    "value": "o"
+                  },
+                  "over": false
+              }
+            };
+
+            api.updateGame(data)
+            .done(ui.createGameSuccess)
+            .then(console.log('milk'))
+            .fail(ui.failure);
 
 		    }
 			}
