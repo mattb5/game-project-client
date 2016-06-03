@@ -2,6 +2,8 @@
 
 const app = require('../app.js');
 
+
+
 const signUp = (data) => {
   return $.ajax (
   {
@@ -79,6 +81,20 @@ const getGameById = function (gameId) {
   });
 };
 
+const updateGame = function (data){
+  return $.ajax (
+        {
+        // url: app.host + '/games/' + app.game.id,
+        url: app.host + '/games/8820',
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + app.user.token,
+        },
+        data: data,
+      });
+    };
+
+
 module.exports = {
   signUp,
   signIn,
@@ -87,4 +103,5 @@ module.exports = {
   createGame,
   getGames,
   getGameById,
+  updateGame,
 };

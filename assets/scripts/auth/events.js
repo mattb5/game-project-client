@@ -71,6 +71,7 @@ const onGetGameById = function(event)
   .fail(ui.failure);
 };
 
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);

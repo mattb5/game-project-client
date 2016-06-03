@@ -1,5 +1,7 @@
 'use strict';
 
+const api = require('./auth/api.js');
+
 let gameArray = ["","","","","","","","","",];
 
 const ifWinner = function ()
@@ -78,7 +80,20 @@ $( document ).ready(function() {
 							gameArray[0] = "x";
 	            counter++;
 							console.log(gameArray);
-              
+
+              let data = {
+  "game": {
+    "cell": {
+      "index": 0,
+      "value": "x"
+    },
+    "over": false
+  }
+}
+
+              api.updateGame(data);
+
+
 	        }
 	        else
 	        {
