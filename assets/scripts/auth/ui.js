@@ -13,16 +13,16 @@ if(data)
  }
 };
 
-const successCreateGame = (data) => {
-if(data)
- {
-  console.log(data);
- }
- else
- {
-  console.log("Created a game");
- }
-};
+// const successCreateGame = (data) => {
+// if(data)
+//  {
+//   console.log(data);
+//  }
+//  else
+//  {
+//   console.log("Created a game");
+//  }
+// };
 
 const successGetGames = (data) => {
 if(data)
@@ -49,7 +49,18 @@ const signOutSuccess = function (){
   console.log(app);
 };
 
+const successCreateGame = function (data){
+console.log("this is data");
+console.log(data);
+// let gameID = data.game.id;
+app.game = data.game;
+// console.log(gameID);
+console.log(app.game);
+};
 
+const supplyGameID = function (){
+  return gameID;
+};
 
 module.exports = {
   failure,

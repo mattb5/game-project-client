@@ -1,6 +1,7 @@
 'use strict';
 
 const api = require('./auth/api.js');
+const ui = require('./auth/ui.js');
 
 let gameArray = ["","","","","","","","","",];
 
@@ -89,10 +90,12 @@ $( document ).ready(function() {
     },
     "over": false
   }
-}
+};
 
-              api.updateGame(data);
-
+              api.updateGame(data)
+              .done(ui.createGameSuccess)
+              .then(console.log('milk'))
+              .fail(ui.failure);
 
 	        }
 	        else

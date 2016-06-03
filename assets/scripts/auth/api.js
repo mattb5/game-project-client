@@ -1,7 +1,7 @@
 'use strict';
 
 const app = require('../app.js');
-
+const ui = require('./ui.js');
 
 
 const signUp = (data) => {
@@ -27,6 +27,7 @@ const signIn = (signInData) => {
 };
 
 const signOut = function (){
+    console.log(app.user);
     return $.ajax ({
       url: app.host + '/sign-out/' + app.user.id,
       method: 'DELETE',
@@ -34,6 +35,7 @@ const signOut = function (){
         Authorization: "Token token=" + app.user.token,
       },
     });
+
 };
 
 const changePassword = function (data) {
@@ -82,10 +84,12 @@ const getGameById = function (gameId) {
 };
 
 const updateGame = function (data){
+  console.log(app.user.email);
   return $.ajax (
         {
         // url: app.host + '/games/' + app.game.id,
-        url: app.host + '/games/8820',
+        // url: app.host + '/games/9107',
+        url: app.host + '/games/' + app.game.id,
         method: 'PATCH',
         headers: {
           Authorization: 'Token token=' + app.user.token,
