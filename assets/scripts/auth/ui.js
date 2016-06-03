@@ -55,11 +55,7 @@ console.log(data);
 // let gameID = data.game.id;
 app.game = data.game;
 // console.log(gameID);
-console.log(app.game);
-};
-
-const supplyGameID = function (){
-  return gameID;
+console.log(app.game.id);
 };
 
 module.exports = {

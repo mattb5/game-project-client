@@ -83,14 +83,14 @@ $( document ).ready(function() {
 							console.log(gameArray);
 
               let data = {
-  "game": {
-    "cell": {
-      "index": 0,
-      "value": "x"
-    },
-    "over": false
-  }
-};
+                  "game": {
+                    "cell": {
+                      "index": 0,
+                      "value": "x"
+                    },
+                    "over": false
+                }
+              };
 
               api.updateGame(data)
               .done(ui.createGameSuccess)
@@ -104,6 +104,13 @@ $( document ).ready(function() {
 							gameArray[0] = "o";
 							counter++;
 							console.log(gameArray);
+
+              
+
+              api.updateGame(data)
+              .done(ui.createGameSuccess)
+              .then(console.log('milk'))
+              .fail(ui.failure);
 	        }
 				}
         ifWinner();
