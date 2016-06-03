@@ -10,22 +10,25 @@ const ifWinner = function ()
 
 		//horizontal winners
 
-		if (gameArray[0] === "x" && gameArray[1] === "x" && gameArray[2] === "x")
-		// if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
+		// if (gameArray[0] === "x" && gameArray[1] === "x" && gameArray[2] === "x")
+		if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
 		{
 			alert("X is the winner!");
 		}
 
+    // if (gameArray[0] === "o" && gameArray[1] === "o" && gameArray[2] === "o")
 		else if (($("#divOne").hasClass("oBox") && $("#divTwo").hasClass("oBox") && $("#divThree").hasClass("oBox")))
 		{
 			alert("O is the winner!");
 		}
 
 		else if (($("#divFour").hasClass("xBox") && $("#divFive").hasClass("xBox") && $("#divSix").hasClass("xBox")))
-		{
+    // if (gameArray[3] === "x" && gameArray[4] === "x" && gameArray[5] === "x")
+    {
 			alert("Winner!");
 		}
 
+    // if (gameArray[3] === "o" && gameArray[4] === "o" && gameArray[5] === "o")
 		else if (($("#divFour").hasClass("oBox") && $("#divFive").hasClass("oBox") && $("#divSix").hasClass("oBox")))
 		{
 			alert("Winner!");
@@ -45,7 +48,7 @@ const ifWinner = function ()
 		{
 			alert("Winner!");
 		}
-
+    
 
 
 		//diagonal winners
