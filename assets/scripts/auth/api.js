@@ -68,10 +68,10 @@ const getGames = function () {
   });
 };
 
-const getGameById = function () {
+const getGameById = function (gameId) {
   return $.ajax(
   {
-    url: app.host + '/games/8659',
+    url: app.host + '/games/' + gameId,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,

@@ -64,7 +64,9 @@ const onGetGames = function(event)
 const onGetGameById = function(event)
 {
   event.preventDefault();
-  api.getGameById()
+  let gameId = $('#getGameByIdText').val();
+  console.log(gameId);
+  api.getGameById(gameId)
   .done(ui.successGetGames)
   .fail(ui.failure);
 };
