@@ -78,6 +78,7 @@ $( document ).ready(function() {
 							gameArray[0] = "x";
 	            counter++;
 							console.log(gameArray);
+              
 	        }
 	        else
 	        {
