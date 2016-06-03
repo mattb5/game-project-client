@@ -58,7 +58,12 @@ const ifWinner = function ()
 		}
 	};
 
-
+const ifTie = function () {
+  if ((gameArray[0] !== "") && (gameArray[1] !== "") && (gameArray[2] !== ""))
+  {
+    alert("We have a cat's draw! Meow Meow!")
+  }
+};
 
 // the click event handlers in the box
 $( document ).ready(function() {
@@ -88,6 +93,7 @@ $( document ).ready(function() {
 	        }
 				}
         ifWinner();
+        ifTie();
     	});
 
 
