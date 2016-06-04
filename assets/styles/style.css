@@ -32,3 +32,9 @@ div {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
+.gameOver{
+	background-image: url(gameOver.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
