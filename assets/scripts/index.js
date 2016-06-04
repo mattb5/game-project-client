@@ -13,12 +13,15 @@ let gameArray = ["","","","","","","","","",];
 let winnerBool= true;
 
 const ifTie = function () {
-  if ((gameArray[0] !== "") && (gameArray[1] !== "") && (gameArray[2] !== ""
-        ))
-  // if (counter < 9)
-  {
-    alert("We have a cat's draw! Meow Meow!");
-  }
+  if ((gameArray[0] !== "") && (gameArray[1] !== "") && (gameArray[2] !== "") &&
+     (gameArray[3] !== "") && (gameArray[4] !== "") && (gameArray[5] !== "") &&
+     (gameArray[6] !== "") && (gameArray[7] !== "") && (gameArray[8] !== ""))
+        {
+          if (winnerBool)
+          {
+            alert("We have a cat's draw! Meow Meow!");
+          }
+        }  
 };
 
 
@@ -168,6 +171,7 @@ $( document ).ready(function() {
 	        }
 				}
        }
+       ifTie();
     	});
 
 
@@ -192,6 +196,7 @@ $( document ).ready(function() {
   		    }
   			}
        }
+       ifTie();
 	    });
 
 
@@ -216,6 +221,7 @@ $( document ).ready(function() {
   				}
   			}
        }
+       ifTie();
     	});
 
     $("#divFour").on("click", function(){
@@ -240,6 +246,7 @@ $( document ).ready(function() {
   				}
   			}
       }
+      ifTie();
 		});
 
      $("#divFive").on("click", function(){
@@ -262,6 +269,7 @@ $( document ).ready(function() {
   				 }
   			 }
         }
+        ifTie();
   		});
 
      $("#divSix").on("click", function(){
@@ -284,7 +292,8 @@ $( document ).ready(function() {
   				 }
   			 }
        }
-       });
+       ifTie();
+      });
 
      $("#divSeven").on("click",function(){
        if (winnerBool){
@@ -306,6 +315,7 @@ $( document ).ready(function() {
   				 }
   			 }
        }
+       ifTie();
 			});
 
      $("#divEight").on("click", function(){
@@ -328,6 +338,7 @@ $( document ).ready(function() {
    				}
    			}
       }
+      ifTie();
 		});
 
      $("#divNine").on("click", function(){
@@ -350,6 +361,7 @@ $( document ).ready(function() {
 				}
 			}
     }
+    ifTie();
 		});
 
 		$("#resetButton").on("click", function( event ) {
