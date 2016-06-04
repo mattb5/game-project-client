@@ -13,7 +13,8 @@ let gameArray = ["","","","","","","","","",];
 let winnerBool= true;
 
 const ifTie = function () {
-  if ((gameArray[0] !== "") && (gameArray[1] !== "") && (gameArray[2] !== ""))
+  if ((gameArray[0] !== "") && (gameArray[1] !== "") && (gameArray[2] !== ""
+        ))
   // if (counter < 9)
   {
     alert("We have a cat's draw! Meow Meow!");
