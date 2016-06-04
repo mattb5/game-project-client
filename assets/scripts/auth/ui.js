@@ -27,8 +27,12 @@ if(data)
 const successGetGames = (data) => {
 // if(data)
 //  {
-//   console.log(data);
-  $("#GET-to-site").text(data);
+
+  app.games = data.games;
+  console.log(app.games);
+  //this first array works
+  // $("#GET-to-site").text(app.games[0].cells);
+  $("#GET-to-site").text("Thus far, the player has played " + app.games.length + "games.");
 //  }
 //  else
 //  {
