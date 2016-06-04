@@ -2,20 +2,20 @@
 
 let gameArray = ["","","","","","","","","",];
 
-const preventPlay = function () {
-  // if ((!$("div")hasClass("xBox")) && (!$("div").hasClass("oBox")))
-  // // (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-  // {
-    $("div").addClass("gameOver");
-  // }
-};
+// const preventPlay = function () {
+//   // if ((!$("div")hasClass("xBox")) && (!$("div").hasClass("oBox")))
+//   // // (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+//   // {
+//     $("div").addClass("gameOver");
+//   // }
+// };
 
 let winnerBool= true;
 
 const ifTie = function () {
   if ((gameArray[0] !== "") && (gameArray[1] !== "") && (gameArray[2] !== ""))
+  // if (counter < 9)
   {
-
     alert("We have a cat's draw! Meow Meow!");
   }
 };
@@ -37,34 +37,34 @@ const ifWinner = function ()
 		else if (($("#divOne").hasClass("oBox") && $("#divTwo").hasClass("oBox") && $("#divThree").hasClass("oBox")))
 		{
       gameArray = ["","","","","","","","","",];
-      //preventPlay();
+      winnerBool = false;
 			alert("O is the winner!");
 		}
 // middle row
 		else if (($("#divFour").hasClass("xBox") && $("#divFive").hasClass("xBox") && $("#divSix").hasClass("xBox")))
 		{
       gameArray = ["","","","","","","","","",];
-      //preventPlay();
+      winnerBool = false;
 			alert("X is the winner!");
 		}
 
 		else if (($("#divFour").hasClass("oBox") && $("#divFive").hasClass("oBox") && $("#divSix").hasClass("oBox")))
 		{
       gameArray = ["","","","","","","","","",];
-      //preventPlay();
+      winnerBool = false;
 			alert("X is the winner!");
 		}
 // bottom row
     else if (gameArray[6] === "x" && gameArray[7] === "x" && gameArray[8] === "x")
     // if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
     {
-      //preventPlay();
+      winnerBool = false;
       alert("X is the winner!");
     }
 
     else if (gameArray[6] === "o" && gameArray[7] === "o" && gameArray[8] === "o")
     {
-      //preventPlay();
+      winnerBool = false;
       alert("O is the winner!");
     }
 
@@ -74,38 +74,38 @@ const ifWinner = function ()
 //left vertical winner
 		else if (($("#divOne").hasClass("xBox") && $("#divFour").hasClass("xBox") && $("#divSeven").hasClass("xBox")))
 		{
-      //preventPlay();
+      winnerBool = false;
 			alert("X is the winner!");
 		}
 		else if (($("#divOne").hasClass("oBox") && $("#divFour").hasClass("oBox") && $("#divSeven").hasClass("oBox")))
 		{
-      //preventPlay();
+      winnerBool = false;
 			alert("Winner!");
 		}
 //middle vertical winner
     else if (gameArray[1] === "x" && gameArray[4] === "x" && gameArray[7] === "x")
     // if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
     {
-      //preventPlay();
+      winnerBool = false;
       alert("X is the winner!");
     }
 
     else if (gameArray[1] === "o" && gameArray[4] === "o" && gameArray[7] === "o")
     {
-      //preventPlay();
+      winnerBool = false;
       alert("O is the winner!");
     }
 //right vertical winner
     else if (gameArray[2] === "x" && gameArray[5] === "x" && gameArray[8] === "x")
     // if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
     {
-      //preventPlay();
+      winnerBool = false;
       alert("X is the winner!");
     }
 
     else if (gameArray[2] === "o" && gameArray[5] === "o" && gameArray[8] === "o")
     {
-      //preventPlay();
+      winnerBool = false;
       alert("O is the winner!");
     }
 
@@ -113,22 +113,24 @@ const ifWinner = function ()
 //left to right diagonal winner
 		else if (($("#divOne").hasClass("xBox") && $("#divFive").hasClass("xBox") && $("#divNine").hasClass("xBox")))
 		{
+      winnerBool = false;
 			alert("X is the winner!");
 		}
 		else if (($("#divOne").hasClass("oBox") && $("#divFive").hasClass("oBox") && $("#divNine").hasClass("oBox")))
 		{
+      winnerBool = false;
 			alert("Winner!");
 		}
 //right to left diagonal winner
     else if (gameArray[2] === "x" && gameArray[4] === "x" && gameArray[6] === "x")
     // if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
     {
-      //preventPlay();
+      winnerBool = false;
       alert("X is the winner!");
     }
     else if (gameArray[2] === "o" && gameArray[4] === "o" && gameArray[6] === "o")
     {
-      //preventPlay();
+      winnerBool = false;
       alert("O is the winner!");
     }
   };
@@ -143,7 +145,7 @@ $( document ).ready(function() {
     let counter = 0;
 
     $("#divOne").on("click", function(){
-      // if (ifNoWinnerYet()){
+      if (winnerBool){
         if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
 				{
 			  	if (counter % 2 === 0)
@@ -164,59 +166,55 @@ $( document ).ready(function() {
 
 	        }
 				}
-
-        // if (ifWinnerExists() === true)
-        //   {
-        //     alert("this is alerting ifWinnerExists");
-            // ifWinner();
-          // }
-
-        // ifTie();
+       }
     	});
 
 
 
 	$("#divTwo").on("click", function(){
-			if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-			{
-				if (counter % 2 === 0)
-		    {
-		        $(this).addClass('xBox');
-						gameArray[1] = "x";
-						counter++;
-            ifWinner();
-		    }
-				else
-				{
-		        $(this).addClass('oBox');
-						gameArray[1] = "o";
-						counter++;
-            ifWinner();
-		    }
-			}
-
+      if (winnerBool){
+        if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+  			{
+  				if (counter % 2 === 0)
+  		    {
+  		        $(this).addClass('xBox');
+  						gameArray[1] = "x";
+  						counter++;
+              ifWinner();
+  		    }
+  				else
+  				{
+  		        $(this).addClass('oBox');
+  						gameArray[1] = "o";
+  						counter++;
+              ifWinner();
+  		    }
+  			}
+       }
 	    });
 
 
     $("#divThree").on("click", function(){
-			if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-			{
-				if (counter % 2 === 0)
-				{
-						$(this).addClass('xBox');
-						gameArray[2] = "x";
-						counter++;
-            ifWinner();
-				}
-				else
-				{
-						$(this).addClass('oBox');
-						gameArray[2] = "o";
-						counter++;
-            ifWinner();
+      if (winnerBool){
+        if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+  			{
+  				if (counter % 2 === 0)
+  				{
+  						$(this).addClass('xBox');
+  						gameArray[2] = "x";
+  						counter++;
+              ifWinner();
+  				}
+  				else
+  				{
+  						$(this).addClass('oBox');
+  						gameArray[2] = "o";
+  						counter++;
+              ifWinner();
 
-				}
-			}
+  				}
+  			}
+       }
     	});
 
     $("#divFour").on("click", function(){
@@ -266,68 +264,75 @@ $( document ).ready(function() {
   		});
 
      $("#divSix").on("click", function(){
-			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-			 {
-				 if (counter % 2 === 0)
-				 {
-						 $(this).addClass('xBox');
-						 gameArray[5] = "x";
-						 counter++;
-             ifWinner();
-				 }
-				 else
-				 {
-						 $(this).addClass('oBox');
-						 gameArray[5] = "o";
-						 counter++;
-             ifWinner();
-				 }
-			 }
-			 });
+       if (winnerBool){
+  			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+  			 {
+  				 if (counter % 2 === 0)
+  				 {
+  						 $(this).addClass('xBox');
+  						 gameArray[5] = "x";
+  						 counter++;
+               ifWinner();
+  				 }
+  				 else
+  				 {
+  						 $(this).addClass('oBox');
+  						 gameArray[5] = "o";
+  						 counter++;
+               ifWinner();
+  				 }
+  			 }
+       }
+       });
 
      $("#divSeven").on("click",function(){
-			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-			 {
-				 if (counter % 2 === 0)
-				 {
-						 $(this).addClass('xBox');
-						 gameArray[6] = "x";
-						 counter++;
-             ifWinner();
-				 }
-				 else
-				 {
-						 $(this).addClass('oBox');
-						 gameArray[6] = "o";
-						 counter++;
-             ifWinner();
-				 }
-			 }
-			 });
+       if (winnerBool){
+  			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+  			 {
+  				 if (counter % 2 === 0)
+  				 {
+  						 $(this).addClass('xBox');
+  						 gameArray[6] = "x";
+  						 counter++;
+               ifWinner();
+  				 }
+  				 else
+  				 {
+  						 $(this).addClass('oBox');
+  						 gameArray[6] = "o";
+  						 counter++;
+               ifWinner();
+  				 }
+  			 }
+       }
+			});
 
      $("#divEight").on("click", function(){
-			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
- 			{
- 				if (counter % 2 == 0)
- 				{
- 						$(this).addClass('xBox');
-						gameArray[7] = "x";
-						counter++;
-            ifWinner();
- 				}
- 				else
- 				{
- 						$(this).addClass('oBox');
-						gameArray[7] = "o";
-						counter++;
-            ifWinner();
- 				}
- 			}
+       if (winnerBool){
+  			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
+   		 	 {
+   				if (counter % 2 == 0)
+   				{
+   						$(this).addClass('xBox');
+  						gameArray[7] = "x";
+  						counter++;
+              ifWinner();
+   				}
+   				else
+   				{
+   						$(this).addClass('oBox');
+  						gameArray[7] = "o";
+  						counter++;
+              ifWinner();
+   				}
+   			}
+      }
 		});
 
      $("#divNine").on("click", function(){
+       if (winnerBool){
 			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-			{
+			 {
 				if (counter % 2 == 0)
 				{
 						$(this).addClass('xBox');
@@ -343,6 +348,7 @@ $( document ).ready(function() {
             ifWinner();
 				}
 			}
+    }
 		});
 
 		$("#resetButton").on("click", function( event ) {
