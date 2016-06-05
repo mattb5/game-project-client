@@ -1,5 +1,8 @@
 'use strict';
 
+const api = require('./auth/api.js');
+const ui = require('./auth/ui.js');
+
 let gameArray = ["","","","","","","","","",];
 
 let winnerBool= true;
@@ -149,6 +152,22 @@ $( document ).ready(function() {
 	            counter++;
 							console.log(gameArray);
               ifWinner();
+
+              let data = {
+                 "game": {
+                   "cell": {
+                     "index": 0,
+                     "value": "x"
+                   },
+                   "over": false
+               }
+             };
+
+             api.updateGame(data)
+             .done(ui.createGameSuccess)
+             .then(console.log('milk'))
+             .fail(ui.failure);
+
 	        }
 	        else
 	        {
@@ -157,6 +176,21 @@ $( document ).ready(function() {
 							counter++;
 							console.log(gameArray);
               ifWinner();
+
+              let data = {
+                 "game": {
+                   "cell": {
+                     "index": 0,
+                     "value": "o"
+                   },
+                   "over": false
+               }
+             };
+
+             api.updateGame(data)
+             .done(ui.createGameSuccess)
+             .then(console.log('milk'))
+             .fail(ui.failure);
 
 	        }
 				}
@@ -176,6 +210,23 @@ $( document ).ready(function() {
   						gameArray[1] = "x";
   						counter++;
               ifWinner();
+
+              let data = {
+                 "game": {
+                   "cell": {
+                     "index": 1,
+                     "value": "x"
+                   },
+                   "over": false
+               }
+             };
+
+             api.updateGame(data)
+             .done(ui.createGameSuccess)
+             .then(console.log('milk'))
+             .fail(ui.failure);
+
+
   		    }
   				else
   				{
@@ -183,6 +234,21 @@ $( document ).ready(function() {
   						gameArray[1] = "o";
   						counter++;
               ifWinner();
+
+              let data = {
+                 "game": {
+                   "cell": {
+                     "index": 1,
+                     "value": "o"
+                   },
+                   "over": false
+               }
+             };
+
+             api.updateGame(data)
+             .done(ui.createGameSuccess)
+             .then(console.log('milk'))
+             .fail(ui.failure);
   		    }
   			}
        }
@@ -200,6 +266,21 @@ $( document ).ready(function() {
   						gameArray[2] = "x";
   						counter++;
               ifWinner();
+
+              let data = {
+                 "game": {
+                   "cell": {
+                     "index": 2,
+                     "value": "x"
+                   },
+                   "over": false
+               }
+             };
+
+             api.updateGame(data)
+             .done(ui.createGameSuccess)
+             .then(console.log('milk'))
+             .fail(ui.failure);
   				}
   				else
   				{
@@ -207,6 +288,21 @@ $( document ).ready(function() {
   						gameArray[2] = "o";
   						counter++;
               ifWinner();
+
+              let data = {
+                 "game": {
+                   "cell": {
+                     "index": 2,
+                     "value": "o"
+                   },
+                   "over": false
+               }
+             };
+
+             api.updateGame(data)
+             .done(ui.createGameSuccess)
+             .then(console.log('milk'))
+             .fail(ui.failure);
 
   				}
   			}
@@ -226,6 +322,21 @@ $( document ).ready(function() {
   						gameArray[3] = "x";
   						counter++;
               ifWinner();
+
+              let data = {
+                 "game": {
+                   "cell": {
+                     "index": 3,
+                     "value": "x"
+                   },
+                   "over": false
+               }
+             };
+
+             api.updateGame(data)
+             .done(ui.createGameSuccess)
+             .then(console.log('milk'))
+             .fail(ui.failure);
   				}
   				else
   				{
@@ -233,6 +344,21 @@ $( document ).ready(function() {
   						gameArray[3] = "o";
   						counter++;
               ifWinner();
+
+              let data = {
+                 "game": {
+                   "cell": {
+                     "index": 3,
+                     "value": "o"
+                   },
+                   "over": false
+               }
+             };
+
+             api.updateGame(data)
+             .done(ui.createGameSuccess)
+             .then(console.log('milk'))
+             .fail(ui.failure);
   				}
   			}
       }
@@ -249,6 +375,21 @@ $( document ).ready(function() {
   						 gameArray[4] = "x";
   						 counter++;
                ifWinner();
+
+               let data = {
+                  "game": {
+                    "cell": {
+                      "index": 4,
+                      "value": "x"
+                    },
+                    "over": false
+                }
+              };
+
+              api.updateGame(data)
+              .done(ui.createGameSuccess)
+              .then(console.log('milk'))
+              .fail(ui.failure);
   				 }
   				 else
   				 {
@@ -256,6 +397,21 @@ $( document ).ready(function() {
   						 gameArray[4] = "o";
   						 counter++;
                ifWinner();
+
+               let data = {
+                  "game": {
+                    "cell": {
+                      "index": 4,
+                      "value": "o"
+                    },
+                    "over": false
+                }
+              };
+
+              api.updateGame(data)
+              .done(ui.createGameSuccess)
+              .then(console.log('milk'))
+              .fail(ui.failure);
   				 }
   			 }
         }
@@ -272,6 +428,21 @@ $( document ).ready(function() {
   						 gameArray[5] = "x";
   						 counter++;
                ifWinner();
+
+               let data = {
+                  "game": {
+                    "cell": {
+                      "index": 5,
+                      "value": "x"
+                    },
+                    "over": false
+                }
+              };
+
+              api.updateGame(data)
+              .done(ui.createGameSuccess)
+              .then(console.log('milk'))
+              .fail(ui.failure);
   				 }
   				 else
   				 {
@@ -279,6 +450,21 @@ $( document ).ready(function() {
   						 gameArray[5] = "o";
   						 counter++;
                ifWinner();
+
+               let data = {
+                  "game": {
+                    "cell": {
+                      "index": 5,
+                      "value": "o"
+                    },
+                    "over": false
+                }
+              };
+
+              api.updateGame(data)
+              .done(ui.createGameSuccess)
+              .then(console.log('milk'))
+              .fail(ui.failure);
   				 }
   			 }
        }
@@ -295,6 +481,21 @@ $( document ).ready(function() {
   						 gameArray[6] = "x";
   						 counter++;
                ifWinner();
+
+               let data = {
+                  "game": {
+                    "cell": {
+                      "index": 6,
+                      "value": "x"
+                    },
+                    "over": false
+                }
+              };
+
+              api.updateGame(data)
+              .done(ui.createGameSuccess)
+              .then(console.log('milk'))
+              .fail(ui.failure);
   				 }
   				 else
   				 {
@@ -302,6 +503,21 @@ $( document ).ready(function() {
   						 gameArray[6] = "o";
   						 counter++;
                ifWinner();
+
+               let data = {
+                  "game": {
+                    "cell": {
+                      "index": 6,
+                      "value": "o"
+                    },
+                    "over": false
+                }
+              };
+
+              api.updateGame(data)
+              .done(ui.createGameSuccess)
+              .then(console.log('milk'))
+              .fail(ui.failure);
   				 }
   			 }
        }
@@ -318,6 +534,21 @@ $( document ).ready(function() {
   						gameArray[7] = "x";
   						counter++;
               ifWinner();
+
+              let data = {
+                 "game": {
+                   "cell": {
+                     "index": 7,
+                     "value": "x"
+                   },
+                   "over": false
+               }
+             };
+
+             api.updateGame(data)
+             .done(ui.createGameSuccess)
+             .then(console.log('milk'))
+             .fail(ui.failure);
    				}
    				else
    				{
@@ -325,6 +556,21 @@ $( document ).ready(function() {
   						gameArray[7] = "o";
   						counter++;
               ifWinner();
+
+              let data = {
+                 "game": {
+                   "cell": {
+                     "index": 7,
+                     "value": "o"
+                   },
+                   "over": false
+               }
+             };
+
+             api.updateGame(data)
+             .done(ui.createGameSuccess)
+             .then(console.log('milk'))
+             .fail(ui.failure);
    				}
    			}
       }
@@ -341,6 +587,21 @@ $( document ).ready(function() {
 						gameArray[8] = "x";
 						counter++;
             ifWinner();
+
+            let data = {
+               "game": {
+                 "cell": {
+                   "index": 8,
+                   "value": "o"
+                 },
+                 "over": false
+             }
+           };
+
+           api.updateGame(data)
+           .done(ui.createGameSuccess)
+           .then(console.log('milk'))
+           .fail(ui.failure);
 				}
 				else
 				{
@@ -348,6 +609,21 @@ $( document ).ready(function() {
 						gameArray[8] = "o";
 						counter++;
             ifWinner();
+
+            let data = {
+               "game": {
+                 "cell": {
+                   "index": 8,
+                   "value": "o"
+                 },
+                 "over": false
+             }
+           };
+
+           api.updateGame(data)
+           .done(ui.createGameSuccess)
+           .then(console.log('milk'))
+           .fail(ui.failure);
 				}
 			}
     }
