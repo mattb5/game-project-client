@@ -6,10 +6,11 @@ const getFormFields = require('../../../lib/get-form-fields');
 const api = require('./api');
 const ui = require('./ui');
 
+
 const onSignUp = function (event){
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
+  // console.log(data);
   api.signUp(data)
   .done(ui.success)
   .fail(ui.failure);
@@ -71,14 +72,14 @@ const onGetGameById = function(event)
   .fail(ui.failure);
 };
 
-this is a test
-this is a second test
+
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
+  // $('#change-password').on('submit', onResetGame);
   $('#create-game').on('submit', onCreateGame);
   $('#get-games').on('submit', onGetGames);
   $('#get-game-by-id').on('submit', onGetGameById);
