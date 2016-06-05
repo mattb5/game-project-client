@@ -89,4 +89,5 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
+  onCreateGame,
 };
