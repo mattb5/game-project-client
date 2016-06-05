@@ -49,7 +49,7 @@ const ifWinner = function ()
 		{
       gameArray = ["","","","","","","","","",];
       winnerBool = false;
-			alert("X is the winner!");
+			alert("O is the winner!");
 		}
 // bottom row
     else if (gameArray[6] === "x" && gameArray[7] === "x" && gameArray[8] === "x")
@@ -75,7 +75,7 @@ const ifWinner = function ()
 		else if (($("#divOne").hasClass("oBox") && $("#divFour").hasClass("oBox") && $("#divSeven").hasClass("oBox")))
 		{
       winnerBool = false;
-			alert("Winner!");
+			alert("O is the winner!");
 		}
 //middle vertical winner
     else if (gameArray[1] === "x" && gameArray[4] === "x" && gameArray[7] === "x")
@@ -113,7 +113,7 @@ const ifWinner = function ()
 		else if (($("#divOne").hasClass("oBox") && $("#divFive").hasClass("oBox") && $("#divNine").hasClass("oBox")))
 		{
       winnerBool = false;
-			alert("Winner!");
+			alert("O is the Winner!");
 		}
 //right to left diagonal winner
     else if (gameArray[2] === "x" && gameArray[4] === "x" && gameArray[6] === "x")
