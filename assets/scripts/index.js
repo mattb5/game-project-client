@@ -622,6 +622,7 @@ $( document ).ready(function() {
 				// $("#divOne").removeClass();
 				$("div").removeClass();
          events.onCreateGame(event);
+    
       });
 
     });

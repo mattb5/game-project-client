@@ -27,10 +27,13 @@ webpackJsonp([0],[
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+	/* WEBPACK VAR INJECTION */(function($) {
+
+	'use strict';
 
 	var api = __webpack_require__(3);
 	var ui = __webpack_require__(5);
+	var events = __webpack_require__(6);
 
 	var gameArray = ["", "", "", "", "", "", "", "", ""];
 
@@ -527,6 +530,7 @@ webpackJsonp([0],[
 	    winnerBool = true;
 	    // $("#divOne").removeClass();
 	    $("div").removeClass();
+	    events.onCreateGame(event);
 	  });
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
@@ -703,6 +707,7 @@ webpackJsonp([0],[
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {
+
 	'use strict';
 
 	var getFormFields = __webpack_require__(7);
@@ -713,12 +718,15 @@ webpackJsonp([0],[
 	var onSignUp = function onSignUp(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
+	  // console.log(data);
 	  api.signUp(data).done(ui.success).fail(ui.failure);
 	};
 
 	var onSignIn = function onSignIn(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
+	  console.log("this is data: ");
+	  console.log(data);
 	  api.signIn(data).done(ui.signInSuccess).fail(ui.failure);
 	};
 
@@ -729,7 +737,11 @@ webpackJsonp([0],[
 
 	var onChangePassword = function onChangePassword(event) {
 	  event.preventDefault();
+	  console.log("this is event");
+	  console.log(event);
+
 	  var data = getFormFields(event.target);
+	  console.log(data);
 	  api.changePassword(data).done(ui.success).fail(ui.failure);
 	};
 
@@ -746,6 +758,7 @@ webpackJsonp([0],[
 	var onGetGameById = function onGetGameById(event) {
 	  event.preventDefault();
 	  var gameId = $('#getGameByIdText').val();
+	  console.log(gameId);
 	  api.getGameById(gameId).done(ui.successGetGames).fail(ui.failure);
 	};
 
@@ -754,13 +767,15 @@ webpackJsonp([0],[
 	  $('#sign-in').on('submit', onSignIn);
 	  $('#sign-out').on('submit', onSignOut);
 	  $('#change-password').on('submit', onChangePassword);
-	  $('#create-game').on('submit', onCreateGame);
+	  // $('#change-password').on('submit', onResetGame);
+	  // $('#create-game').on('submit', onCreateGame);
 	  $('#get-games').on('submit', onGetGames);
 	  $('#get-game-by-id').on('submit', onGetGameById);
 	};
 
 	module.exports = {
-	  addHandlers: addHandlers
+	  addHandlers: addHandlers,
+	  onCreateGame: onCreateGame
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
