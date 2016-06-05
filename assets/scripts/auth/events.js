@@ -72,7 +72,7 @@ const onGetGameById = function(event)
 };
 
 this is a test
-
+this is a second test
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
