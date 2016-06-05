@@ -15,6 +15,7 @@ const ifTie = function () {
           if (winnerBool)
           {
             winnerBool = false;
+            console.log(gameArray);
             alert("We have a cat's draw! Meow Meow!");
           }
         }
