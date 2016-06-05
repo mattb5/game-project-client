@@ -2,14 +2,6 @@
 
 let gameArray = ["","","","","","","","","",];
 
-// const preventPlay = function () {
-//   // if ((!$("div")hasClass("xBox")) && (!$("div").hasClass("oBox")))
-//   // // (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-//   // {
-//     $("div").addClass("gameOver");
-//   // }
-// };
-
 let winnerBool= true;
 
 const ifTie = function () {
@@ -17,11 +9,12 @@ const ifTie = function () {
      (gameArray[3] !== "") && (gameArray[4] !== "") && (gameArray[5] !== "") &&
      (gameArray[6] !== "") && (gameArray[7] !== "") && (gameArray[8] !== ""))
         {
+          console.log("if Tie is being executed");
           if (winnerBool)
           {
             alert("We have a cat's draw! Meow Meow!");
           }
-        }  
+        }
 };
 
 
@@ -71,8 +64,6 @@ const ifWinner = function ()
       winnerBool = false;
       alert("O is the winner!");
     }
-
-
 		//vertical winners
 
 //left vertical winner
@@ -112,7 +103,6 @@ const ifWinner = function ()
       winnerBool = false;
       alert("O is the winner!");
     }
-
 //diagonal winners
 //left to right diagonal winner
 		else if (($("#divOne").hasClass("xBox") && $("#divFive").hasClass("xBox") && $("#divNine").hasClass("xBox")))
@@ -322,7 +312,7 @@ $( document ).ready(function() {
        if (winnerBool){
   			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
    		 	 {
-   				if (counter % 2 == 0)
+   				if (counter % 2 === 0)
    				{
    						$(this).addClass('xBox');
   						gameArray[7] = "x";
@@ -345,7 +335,7 @@ $( document ).ready(function() {
        if (winnerBool){
 			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
 			 {
-				if (counter % 2 == 0)
+				if (counter % 2 === 0)
 				{
 						$(this).addClass('xBox');
 						gameArray[8] = "x";
