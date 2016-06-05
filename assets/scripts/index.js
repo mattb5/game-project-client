@@ -1,7 +1,10 @@
+
+
 'use strict';
 
 const api = require('./auth/api.js');
 const ui = require('./auth/ui.js');
+const events = require('./auth/events.js')
 
 let gameArray = ["","","","","","","","","",];
 
@@ -618,6 +621,7 @@ $( document ).ready(function() {
         winnerBool = true;
 				// $("#divOne").removeClass();
 				$("div").removeClass();
+         events.onCreateGame(event);
       });
 
     });
