@@ -39,8 +39,9 @@ webpackJsonp([0],[
 	var ifTie = function ifTie() {
 	  if (gameArray[0] !== "" && gameArray[1] !== "" && gameArray[2] !== "" && gameArray[3] !== "" && gameArray[4] !== "" && gameArray[5] !== "" && gameArray[6] !== "" && gameArray[7] !== "" && gameArray[8] !== "") {
 	    if (winnerBool) {
-	      winnerBool = false;
+	      console.log(gameArray);
 	      alert("We have a cat's draw! Meow Meow!");
+	      winnerBool = false;
 	    }
 	  }
 	};
@@ -147,8 +148,8 @@ webpackJsonp([0],[
 	          $(this).addClass('xBox');
 	          gameArray[0] = "x";
 	          counter++;
-	          console.log(gameArray);
 	          ifWinner();
+	          ifTie();
 
 	          var data = {
 	            "game": {
@@ -160,14 +161,13 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(data).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(data).done(ui.createGameSuccess).fail(ui.failure);
 	        } else {
 	          $(this).addClass('oBox');
 	          gameArray[0] = "o";
 	          counter++;
-	          console.log(gameArray);
 	          ifWinner();
-
+	          ifTie();
 	          var _data = {
 	            "game": {
 	              "cell": {
@@ -178,11 +178,10 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(_data).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(_data).done(ui.createGameSuccess).fail(ui.failure);
 	        }
 	      }
 	    }
-	    ifTie();
 	  });
 
 	  $("#divTwo").on("click", function () {
@@ -193,7 +192,7 @@ webpackJsonp([0],[
 	          gameArray[1] = "x";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var data = {
 	            "game": {
 	              "cell": {
@@ -204,13 +203,13 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(data).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(data).done(ui.createGameSuccess).fail(ui.failure);
 	        } else {
 	          $(this).addClass('oBox');
 	          gameArray[1] = "o";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var _data2 = {
 	            "game": {
 	              "cell": {
@@ -221,11 +220,10 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(_data2).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(_data2).done(ui.createGameSuccess).fail(ui.failure);
 	        }
 	      }
 	    }
-	    ifTie();
 	  });
 
 	  $("#divThree").on("click", function () {
@@ -236,7 +234,7 @@ webpackJsonp([0],[
 	          gameArray[2] = "x";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var data = {
 	            "game": {
 	              "cell": {
@@ -247,13 +245,13 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(data).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(data).done(ui.createGameSuccess).fail(ui.failure);
 	        } else {
 	          $(this).addClass('oBox');
 	          gameArray[2] = "o";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var _data3 = {
 	            "game": {
 	              "cell": {
@@ -264,23 +262,21 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(_data3).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(_data3).done(ui.createGameSuccess).fail(ui.failure);
 	        }
 	      }
 	    }
-	    ifTie();
 	  });
 
 	  $("#divFour").on("click", function () {
 	    if (winnerBool) {
-	      console.log(winnerBool);
 	      if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox")) {
 	        if (counter % 2 === 0) {
 	          $(this).addClass('xBox');
 	          gameArray[3] = "x";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var data = {
 	            "game": {
 	              "cell": {
@@ -291,13 +287,13 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(data).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(data).done(ui.createGameSuccess).fail(ui.failure);
 	        } else {
 	          $(this).addClass('oBox');
 	          gameArray[3] = "o";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var _data4 = {
 	            "game": {
 	              "cell": {
@@ -308,11 +304,10 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(_data4).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(_data4).done(ui.createGameSuccess).fail(ui.failure);
 	        }
 	      }
 	    }
-	    ifTie();
 	  });
 
 	  $("#divFive").on("click", function () {
@@ -323,7 +318,7 @@ webpackJsonp([0],[
 	          gameArray[4] = "x";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var data = {
 	            "game": {
 	              "cell": {
@@ -334,13 +329,13 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(data).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(data).done(ui.createGameSuccess).fail(ui.failure);
 	        } else {
 	          $(this).addClass('oBox');
 	          gameArray[4] = "o";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var _data5 = {
 	            "game": {
 	              "cell": {
@@ -351,11 +346,10 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(_data5).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(_data5).done(ui.createGameSuccess).fail(ui.failure);
 	        }
 	      }
 	    }
-	    ifTie();
 	  });
 
 	  $("#divSix").on("click", function () {
@@ -366,7 +360,7 @@ webpackJsonp([0],[
 	          gameArray[5] = "x";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var data = {
 	            "game": {
 	              "cell": {
@@ -377,13 +371,13 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(data).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(data).done(ui.createGameSuccess).fail(ui.failure);
 	        } else {
 	          $(this).addClass('oBox');
 	          gameArray[5] = "o";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var _data6 = {
 	            "game": {
 	              "cell": {
@@ -394,11 +388,10 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(_data6).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(_data6).done(ui.createGameSuccess).fail(ui.failure);
 	        }
 	      }
 	    }
-	    ifTie();
 	  });
 
 	  $("#divSeven").on("click", function () {
@@ -409,7 +402,7 @@ webpackJsonp([0],[
 	          gameArray[6] = "x";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var data = {
 	            "game": {
 	              "cell": {
@@ -420,13 +413,13 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(data).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(data).done(ui.createGameSuccess).fail(ui.failure);
 	        } else {
 	          $(this).addClass('oBox');
 	          gameArray[6] = "o";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var _data7 = {
 	            "game": {
 	              "cell": {
@@ -437,11 +430,10 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(_data7).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(_data7).done(ui.createGameSuccess).fail(ui.failure);
 	        }
 	      }
 	    }
-	    ifTie();
 	  });
 
 	  $("#divEight").on("click", function () {
@@ -452,7 +444,7 @@ webpackJsonp([0],[
 	          gameArray[7] = "x";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var data = {
 	            "game": {
 	              "cell": {
@@ -463,13 +455,13 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(data).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(data).done(ui.createGameSuccess).fail(ui.failure);
 	        } else {
 	          $(this).addClass('oBox');
 	          gameArray[7] = "o";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var _data8 = {
 	            "game": {
 	              "cell": {
@@ -480,11 +472,10 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(_data8).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(_data8).done(ui.createGameSuccess).fail(ui.failure);
 	        }
 	      }
 	    }
-	    ifTie();
 	  });
 
 	  $("#divNine").on("click", function () {
@@ -495,7 +486,7 @@ webpackJsonp([0],[
 	          gameArray[8] = "x";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var data = {
 	            "game": {
 	              "cell": {
@@ -506,13 +497,13 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(data).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(data).done(ui.createGameSuccess).fail(ui.failure);
 	        } else {
 	          $(this).addClass('oBox');
 	          gameArray[8] = "o";
 	          counter++;
 	          ifWinner();
-
+	          ifTie();
 	          var _data9 = {
 	            "game": {
 	              "cell": {
@@ -523,11 +514,10 @@ webpackJsonp([0],[
 	            }
 	          };
 
-	          api.updateGame(_data9).done(ui.createGameSuccess).then(console.log('milk')).fail(ui.failure);
+	          api.updateGame(_data9).done(ui.createGameSuccess).fail(ui.failure);
 	        }
 	      }
 	    }
-	    ifTie();
 	  });
 
 	  $("#resetButton").on("click", function (event) {
@@ -539,660 +529,6 @@ webpackJsonp([0],[
 	    $("div").removeClass();
 	  });
 	});
-	//
-	//
-	// 'use strict';
-	//
-	// const api = require('./auth/api.js');
-	// const ui = require('./auth/ui.js');
-	//
-	// let gameArray = ["","","","","","","","","",];
-	//
-	// // const preventPlay = function () {
-	// //   // if ((!$("div")hasClass("xBox")) && (!$("div").hasClass("oBox")))
-	// //   // // (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-	// //   // {
-	// //     $("div").addClass("gameOver");
-	// //   // }
-	// // };
-	//
-	// let winnerBool= true;
-	//
-	// const ifTie = function () {
-	//   if ((gameArray[0] !== "") && (gameArray[1] !== "") && (gameArray[2] !== "") &&
-	//      (gameArray[3] !== "") && (gameArray[4] !== "") && (gameArray[5] !== "") &&
-	//      (gameArray[6] !== "") && (gameArray[7] !== "") && (gameArray[8] !== ""))
-	//         {
-	//           if (winnerBool)
-	//           {
-	//             alert("We have a cat's draw! Meow Meow!");
-	//           }
-	//         }
-	// };
-	//
-	//
-	// const ifWinner = function ()
-	// 	{
-	// 		//horizontal winners
-	// // top row
-	// 		if (gameArray[0] === "x" && gameArray[1] === "x" && gameArray[2] === "x")
-	// 		// if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
-	// 		{
-	//       gameArray = ["","","","","","","","","",];
-	//       winnerBool = false;
-	//       //preventPlay();
-	//       alert("X is the winner!");
-	// 		}
-	//
-	// 		else if (($("#divOne").hasClass("oBox") && $("#divTwo").hasClass("oBox") && $("#divThree").hasClass("oBox")))
-	// 		{
-	//       gameArray = ["","","","","","","","","",];
-	//       winnerBool = false;
-	// 			alert("O is the winner!");
-	// 		}
-	// // middle row
-	// 		else if (($("#divFour").hasClass("xBox") && $("#divFive").hasClass("xBox") && $("#divSix").hasClass("xBox")))
-	// 		{
-	//       gameArray = ["","","","","","","","","",];
-	//       winnerBool = false;
-	// 			alert("X is the winner!");
-	// 		}
-	//
-	// 		else if (($("#divFour").hasClass("oBox") && $("#divFive").hasClass("oBox") && $("#divSix").hasClass("oBox")))
-	// 		{
-	//       gameArray = ["","","","","","","","","",];
-	//       winnerBool = false;
-	// 			alert("O is the winner!");
-	// 		}
-	// // bottom row
-	//     else if (gameArray[6] === "x" && gameArray[7] === "x" && gameArray[8] === "x")
-	//     // if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
-	//     {
-	//       winnerBool = false;
-	//       alert("X is the winner!");
-	//     }
-	//
-	//     else if (gameArray[6] === "o" && gameArray[7] === "o" && gameArray[8] === "o")
-	//     {
-	//       winnerBool = false;
-	//       alert("O is the winner!");
-	//     }
-	//
-	//
-	// //vertical winners
-	//
-	// //left vertical winner
-	// 		else if (($("#divOne").hasClass("xBox") && $("#divFour").hasClass("xBox") && $("#divSeven").hasClass("xBox")))
-	// 		{
-	//       winnerBool = false;
-	// 			alert("X is the winner!");
-	// 		}
-	// 		else if (($("#divOne").hasClass("oBox") && $("#divFour").hasClass("oBox") && $("#divSeven").hasClass("oBox")))
-	// 		{
-	//       winnerBool = false;
-	// 			alert("O is the Winner!");
-	// 		}
-	// //middle vertical winner
-	//     else if (gameArray[1] === "x" && gameArray[4] === "x" && gameArray[7] === "x")
-	//     // if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
-	//     {
-	//       winnerBool = false;
-	//       alert("X is the winner!");
-	//     }
-	//
-	//     else if (gameArray[1] === "o" && gameArray[4] === "o" && gameArray[7] === "o")
-	//     {
-	//       winnerBool = false;
-	//       alert("O is the winner!");
-	//     }
-	// //right vertical winner
-	//     else if (gameArray[2] === "x" && gameArray[5] === "x" && gameArray[8] === "x")
-	//     // if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
-	//     {
-	//       winnerBool = false;
-	//       alert("X is the winner!");
-	//     }
-	//
-	//     else if (gameArray[2] === "o" && gameArray[5] === "o" && gameArray[8] === "o")
-	//     {
-	//       winnerBool = false;
-	//       alert("O is the winner!");
-	//     }
-	//
-	// //diagonal winners
-	// //left to right diagonal winner
-	// 		else if (($("#divOne").hasClass("xBox") && $("#divFive").hasClass("xBox") && $("#divNine").hasClass("xBox")))
-	// 		{
-	//       winnerBool = false;
-	// 			alert("X is the winner!");
-	// 		}
-	// 		else if (($("#divOne").hasClass("oBox") && $("#divFive").hasClass("oBox") && $("#divNine").hasClass("oBox")))
-	// 		{
-	//       winnerBool = false;
-	// 			alert("O is the Winner!");
-	// 		}
-	// //right to left diagonal winner
-	//     else if (gameArray[2] === "x" && gameArray[4] === "x" && gameArray[6] === "x")
-	//     // if ($("#divOne").hasClass("xBox") && $("#divTwo").hasClass("xBox") && $("#divThree").hasClass("xBox"))
-	//     {
-	//       winnerBool = false;
-	//       alert("X is the winner!");
-	//     }
-	//     else if (gameArray[2] === "o" && gameArray[4] === "o" && gameArray[6] === "o")
-	//     {
-	//       winnerBool = false;
-	//       alert("O is the winner!");
-	//     }
-	//   };
-	//
-	// // the click event handlers in the box
-	// $( document ).ready(function() {
-	//
-	//     const authEvents = require('./auth/events.js');
-	//
-	//     authEvents.addHandlers();
-	//
-	//     let counter = 0;
-	//
-	//     $("#divOne").on("click", function(){
-	//       if (winnerBool){
-	//         if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-	// 				{
-	// 			  	if (counter % 2 === 0)
-	// 	        {
-	// 	            $(this).addClass('xBox');
-	// 							gameArray[0] = "x";
-	// 	            counter++;
-	// 							console.log(gameArray);
-	//               ifWinner();
-	//
-	//               let data = {
-	//                              "game": {
-	//                                "cell": {
-	//                                  "index": 0,
-	//                                  "value": "x"
-	//                                },
-	//                                "over": false
-	//                            }
-	//                          };
-	//
-	//                          api.updateGame(data)
-	//                          .done(ui.createGameSuccess)
-	//                          .then(console.log('milk'))
-	//                          .fail(ui.failure);
-	//
-	//
-	// 	        }
-	// 	        else
-	// 	        {
-	// 	            $(this).addClass('oBox');
-	// 							gameArray[0] = "o";
-	// 							counter++;
-	// 							console.log(gameArray);
-	//               ifWinner();
-	//
-	//               let data = {
-	//                              "game": {
-	//                                "cell": {
-	//                                  "index": 0,
-	//                                  "value": "1"
-	//                                },
-	//                                "over": false
-	//                            }
-	//                          };
-	//
-	//                          api.updateGame(data)
-	//                          .done(ui.createGameSuccess)
-	//                          .then(console.log('milk'))
-	//                          .fail(ui.failure);
-	//
-	// 	        }
-	// 				}
-	//        }
-	//        ifTie();
-	//     	});
-	//
-	//
-	//
-	// 	$("#divTwo").on("click", function(){
-	//       if (winnerBool){
-	//         if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-	//   			{
-	//   				if (counter % 2 === 0)
-	//   		    {
-	//   		        $(this).addClass('xBox');
-	//   						gameArray[1] = "x";
-	//   						counter++;
-	//               ifWinner();
-	//
-	//               let data = {
-	//                              "game": {
-	//                                "cell": {
-	//                                  "index": 1,
-	//                                  "value": "x"
-	//                                },
-	//                                "over": false
-	//                            }
-	//                          };
-	//
-	//                          api.updateGame(data)
-	//                          .done(ui.createGameSuccess)
-	//                          .then(console.log('milk'))
-	//                          .fail(ui.failure);
-	//   		    }
-	//   				else
-	//   				{
-	//   		        $(this).addClass('oBox');
-	//   						gameArray[1] = "o";
-	//   						counter++;
-	//               ifWinner();
-	//
-	//               let data = {
-	//                              "game": {
-	//                                "cell": {
-	//                                  "index": 1,
-	//                                  "value": "o"
-	//                                },
-	//                                "over": false
-	//                            }
-	//                          };
-	//
-	//                          api.updateGame(data)
-	//                          .done(ui.createGameSuccess)
-	//                          .then(console.log('milk'))
-	//                          .fail(ui.failure);
-	//   		    }
-	//   			}
-	//        }
-	//        ifTie();
-	// 	    });
-	//
-	//
-	//     $("#divThree").on("click", function(){
-	//       if (winnerBool){
-	//         if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-	//   			{
-	//   				if (counter % 2 === 0)
-	//   				{
-	//   						$(this).addClass('xBox');
-	//   						gameArray[2] = "x";
-	//   						counter++;
-	//               ifWinner();
-	//
-	//               let data = {
-	//                              "game": {
-	//                                "cell": {
-	//                                  "index": 2,
-	//                                  "value": "x"
-	//                                },
-	//                                "over": false
-	//                            }
-	//                          };
-	//
-	//                          api.updateGame(data)
-	//                          .done(ui.createGameSuccess)
-	//                          .then(console.log('milk'))
-	//                          .fail(ui.failure);
-	//   				}
-	//   				else
-	//   				{
-	//   						$(this).addClass('oBox');
-	//   						gameArray[2] = "o";
-	//   						counter++;
-	//               ifWinner();
-	//
-	//               let data = {
-	//                              "game": {
-	//                                "cell": {
-	//                                  "index": 2,
-	//                                  "value": "o"
-	//                                },
-	//                                "over": false
-	//                            }
-	//                          };
-	//
-	//                          api.updateGame(data)
-	//                          .done(ui.createGameSuccess)
-	//                          .then(console.log('milk'))
-	//                          .fail(ui.failure);
-	//
-	//   				}
-	//   			}
-	//        }
-	//        ifTie();
-	//     	});
-	//
-	//     $("#divFour").on("click", function(){
-	//       if (winnerBool)
-	//         {
-	//         console.log(winnerBool);
-	//         if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-	//   			{
-	//   				if (counter % 2 === 0)
-	//   				{
-	//   						$(this).addClass('xBox');
-	//   						gameArray[3] = "x";
-	//   						counter++;
-	//               ifWinner();
-	//
-	//               let data = {
-	//                              "game": {
-	//                                "cell": {
-	//                                  "index": 3,
-	//                                  "value": "x"
-	//                                },
-	//                                "over": false
-	//                            }
-	//                          };
-	//
-	//                          api.updateGame(data)
-	//                          .done(ui.createGameSuccess)
-	//                          .then(console.log('milk'))
-	//                          .fail(ui.failure);
-	//   				}
-	//   				else
-	//   				{
-	//   						$(this).addClass('oBox');
-	//   						gameArray[3] = "o";
-	//   						counter++;
-	//               ifWinner();
-	//
-	//               let data = {
-	//                              "game": {
-	//                                "cell": {
-	//                                  "index": 3,
-	//                                  "value": "o"
-	//                                },
-	//                                "over": false
-	//                            }
-	//                          };
-	//
-	//                          api.updateGame(data)
-	//                          .done(ui.createGameSuccess)
-	//                          .then(console.log('milk'))
-	//                          .fail(ui.failure);
-	//   				}
-	//   			}
-	//       }
-	//       ifTie();
-	// 		});
-	//
-	//      $("#divFive").on("click", function(){
-	//         if (winnerBool){
-	//   			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-	//   			 {
-	//   				 if (counter % 2 === 0)
-	//   				 {
-	//   						 $(this).addClass('xBox');
-	//   						 gameArray[4] = "x";
-	//   						 counter++;
-	//                ifWinner();
-	//
-	//                let data = {
-	//                               "game": {
-	//                                 "cell": {
-	//                                   "index": 4,
-	//                                   "value": "x"
-	//                                 },
-	//                                 "over": false
-	//                             }
-	//                           };
-	//
-	//                           api.updateGame(data)
-	//                           .done(ui.createGameSuccess)
-	//                           .then(console.log('milk'))
-	//                           .fail(ui.failure);
-	//   				 }
-	//   				 else
-	//   				 {
-	//   						 $(this).addClass('oBox');
-	//   						 gameArray[4] = "o";
-	//   						 counter++;
-	//                ifWinner();
-	//
-	//                let data = {
-	//                               "game": {
-	//                                 "cell": {
-	//                                   "index": 4,
-	//                                   "value": "o"
-	//                                 },
-	//                                 "over": false
-	//                             }
-	//                           };
-	//
-	//                           api.updateGame(data)
-	//                           .done(ui.createGameSuccess)
-	//                           .then(console.log('milk'))
-	//                           .fail(ui.failure);
-	//   				 }
-	//   			 }
-	//         }
-	//         ifTie();
-	//   		});
-	//
-	//      $("#divSix").on("click", function(){
-	//        if (winnerBool){
-	//   			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-	//   			 {
-	//   				 if (counter % 2 === 0)
-	//   				 {
-	//   						 $(this).addClass('xBox');
-	//   						 gameArray[5] = "x";
-	//   						 counter++;
-	//                ifWinner();
-	//
-	//                let data = {
-	//                               "game": {
-	//                                 "cell": {
-	//                                   "index": 5,
-	//                                   "value": "x"
-	//                                 },
-	//                                 "over": false
-	//                             }
-	//                           };
-	//
-	//                           api.updateGame(data)
-	//                           .done(ui.createGameSuccess)
-	//                           .then(console.log('milk'))
-	//                           .fail(ui.failure);
-	//            }
-	//   				 else
-	//   				 {
-	//   						 $(this).addClass('oBox');
-	//   						 gameArray[5] = "o";
-	//   						 counter++;
-	//                ifWinner();
-	//
-	//                let data = {
-	//                               "game": {
-	//                                 "cell": {
-	//                                   "index": 5,
-	//                                   "value": "x"
-	//                                 },
-	//                                 "over": false
-	//                             }
-	//                           };
-	//
-	//                           api.updateGame(data)
-	//                           .done(ui.createGameSuccess)
-	//                           .then(console.log('milk'))
-	//                           .fail(ui.failure);
-	//   				 }
-	//   			 }
-	//        }
-	//        ifTie();
-	//       });
-	//
-	//      $("#divSeven").on("click",function(){
-	//        if (winnerBool){
-	//   			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-	//   			 {
-	//   				 if (counter % 2 === 0)
-	//   				 {
-	//   						 $(this).addClass('xBox');
-	//   						 gameArray[6] = "x";
-	//   						 counter++;
-	//                ifWinner();
-	//
-	//                let data = {
-	//                               "game": {
-	//                                 "cell": {
-	//                                   "index": 6,
-	//                                   "value": "x"
-	//                                 },
-	//                                 "over": false
-	//                             }
-	//                           };
-	//
-	//                           api.updateGame(data)
-	//                           .done(ui.createGameSuccess)
-	//                           .then(console.log('milk'))
-	//                           .fail(ui.failure);
-	//
-	//   				 }
-	//   				 else
-	//   				 {
-	//   						 $(this).addClass('oBox');
-	//   						 gameArray[6] = "o";
-	//   						 counter++;
-	//                ifWinner();
-	//
-	//                let data = {
-	//                               "game": {
-	//                                 "cell": {
-	//                                   "index": 6,
-	//                                   "value": "o"
-	//                                 },
-	//                                 "over": false
-	//                             }
-	//                           };
-	//
-	//                           api.updateGame(data)
-	//                           .done(ui.createGameSuccess)
-	//                           .then(console.log('milk'))
-	//                           .fail(ui.failure);
-	//   				 }
-	//   			 }
-	//        }
-	//        ifTie();
-	// 			});
-	//
-	//      $("#divEight").on("click", function(){
-	//        if (winnerBool){
-	//   			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-	//    		 	 {
-	//    				if (counter % 2 == 0)
-	//    				{
-	//    						$(this).addClass('xBox');
-	//   						gameArray[7] = "x";
-	//   						counter++;
-	//               ifWinner();
-	//
-	//               let data = {
-	//                              "game": {
-	//                                "cell": {
-	//                                  "index": 7,
-	//                                  "value": "x"
-	//                                },
-	//                                "over": false
-	//                            }
-	//                          };
-	//
-	//                          api.updateGame(data)
-	//                          .done(ui.createGameSuccess)
-	//                          .then(console.log('milk'))
-	//                          .fail(ui.failure);
-	//    				}
-	//    				else
-	//    				{
-	//    						$(this).addClass('oBox');
-	//   						gameArray[7] = "o";
-	//   						counter++;
-	//               ifWinner();
-	//
-	//               let data = {
-	//                              "game": {
-	//                                "cell": {
-	//                                  "index": 7,
-	//                                  "value": "o"
-	//                                },
-	//                                "over": false
-	//                            }
-	//                          };
-	//
-	//                          api.updateGame(data)
-	//                          .done(ui.createGameSuccess)
-	//                          .then(console.log('milk'))
-	//                          .fail(ui.failure);
-	//    				}
-	//    			}
-	//       }
-	//       ifTie();
-	// 		});
-	//
-	//      $("#divNine").on("click", function(){
-	//        if (winnerBool){
-	// 			 if (!$(this).hasClass("xBox") && !$(this).hasClass("oBox"))
-	// 			 {
-	// 				if (counter % 2 == 0)
-	// 				{
-	// 						$(this).addClass('xBox');
-	// 						gameArray[8] = "x";
-	// 						counter++;
-	//             ifWinner();
-	//
-	//             let data = {
-	//                            "game": {
-	//                              "cell": {
-	//                                "index": 8,
-	//                                "value": "x"
-	//                              },
-	//                              "over": false
-	//                          }
-	//                        };
-	//
-	//                        api.updateGame(data)
-	//                        .done(ui.createGameSuccess)
-	//                        .then(console.log('milk'))
-	//                        .fail(ui.failure);
-	//         }
-	// 				else
-	// 				{
-	// 						$(this).addClass('oBox');
-	// 						gameArray[8] = "o";
-	// 						counter++;
-	//             ifWinner();
-	//
-	//             let data = {
-	//                            "game": {
-	//                              "cell": {
-	//                                "index": 8,
-	//                                "value": "o"
-	//                              },
-	//                              "over": false
-	//                          }
-	//                        };
-	//
-	//                        api.updateGame(data)
-	//                        .done(ui.createGameSuccess)
-	//                        .then(console.log('milk'))
-	//                        .fail(ui.failure);
-	//         }
-	// 			}
-	//     }
-	//     ifTie();
-	// 		});
-	//
-	// 		$("#resetButton").on("click", function( event ) {
-	// 				event.preventDefault();
-	// 				counter = 0;
-	// 				gameArray = ["","","","","","","","","",];
-	//         winnerBool = true;
-	// 				// $("#divOne").removeClass();
-	// 				$("div").removeClass();
-	//       });
-	//
-	//     });
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
@@ -1216,8 +552,6 @@ webpackJsonp([0],[
 	//line 9 and line 17 are doing the same thing, when we use single line
 
 	var signIn = function signIn(signInData) {
-	  console.log('this is the signInData');
-	  console.log(signInData);
 	  return $.ajax({
 	    url: app.host + '/sign-in',
 	    method: 'POST',
@@ -1226,7 +560,6 @@ webpackJsonp([0],[
 	};
 
 	var signOut = function signOut() {
-	  console.log(app.user);
 	  return $.ajax({
 	    url: app.host + '/sign-out/' + app.user.id,
 	    method: 'DELETE',
@@ -1278,7 +611,6 @@ webpackJsonp([0],[
 	};
 
 	var updateGame = function updateGame(data) {
-	  console.log(app.user.email);
 	  return $.ajax({
 	    // url: app.host + '/games/' + app.game.id,
 	    // url: app.host + '/games/9107',
@@ -1323,37 +655,15 @@ webpackJsonp([0],[
 	//the data below is the password
 	var success = function success(data) {
 	  if (data) {
-	    console.log(data);
+	    // console.log(data);
 	  } else {
-	    console.log("Changed password successfully");
-	  }
+	      // console.log("Changed password successfully");
+	    }
 	};
 
-	// const successCreateGame = (data) => {
-	// if(data)
-	//  {
-	//   console.log(data);
-	//  }
-	//  else
-	//  {
-	//   console.log("Created a game");
-	//  }
-	// };
-
 	var successGetGames = function successGetGames(data) {
-	  // if(data)
-	  //  {
-
 	  app.games = data.games;
-	  console.log(app.games);
-	  //this first array works
-	  // $("#GET-to-site").text(app.games[0].cells);
-	  $("#GET-to-site").text("Thus far, the player has played " + app.games.length + "games.");
-	  //  }
-	  //  else
-	  //  {
-	  //   console.log("Got Games!");
-	  //  }
+	  $("#GET-to-site").text("Thus far, the player has played " + app.games.length + " games.");
 	};
 
 	var failure = function failure(error) {
@@ -1362,21 +672,20 @@ webpackJsonp([0],[
 
 	var signInSuccess = function signInSuccess(data) {
 	  app.user = data.user;
-	  console.log(data);
+	  // console.log(data);
 	};
 
 	var signOutSuccess = function signOutSuccess() {
 	  app.user = null;
-	  console.log(app);
+	  // console.log(app);
 	};
 
 	var successCreateGame = function successCreateGame(data) {
-	  console.log("this is data");
-	  console.log(data);
-	  // let gameID = data.game.id;
+	  // console.log("this is data");
+	  // console.log(data);
 	  app.game = data.game;
 	  // console.log(gameID);
-	  console.log(app.game.id);
+	  // console.log(app.game.id);
 	};
 
 	module.exports = {
@@ -1404,15 +713,12 @@ webpackJsonp([0],[
 	var onSignUp = function onSignUp(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  console.log(data);
 	  api.signUp(data).done(ui.success).fail(ui.failure);
 	};
 
 	var onSignIn = function onSignIn(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  console.log("this is data: ");
-	  console.log(data);
 	  api.signIn(data).done(ui.signInSuccess).fail(ui.failure);
 	};
 
@@ -1423,11 +729,7 @@ webpackJsonp([0],[
 
 	var onChangePassword = function onChangePassword(event) {
 	  event.preventDefault();
-	  console.log("this is event");
-	  console.log(event);
-
 	  var data = getFormFields(event.target);
-	  console.log(data);
 	  api.changePassword(data).done(ui.success).fail(ui.failure);
 	};
 
@@ -1444,7 +746,6 @@ webpackJsonp([0],[
 	var onGetGameById = function onGetGameById(event) {
 	  event.preventDefault();
 	  var gameId = $('#getGameByIdText').val();
-	  console.log(gameId);
 	  api.getGameById(gameId).done(ui.successGetGames).fail(ui.failure);
 	};
 
