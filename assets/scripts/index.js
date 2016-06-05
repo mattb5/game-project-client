@@ -14,9 +14,9 @@ const ifTie = function () {
         {
           if (winnerBool)
           {
-            winnerBool = false;
             console.log(gameArray);
             alert("We have a cat's draw! Meow Meow!");
+            winnerBool = false;
           }
         }
 };
@@ -153,6 +153,7 @@ $( document ).ready(function() {
 	            counter++;
 							console.log(gameArray);
               ifWinner();
+              ifTie();
 
               let data = {
                  "game": {
@@ -177,7 +178,7 @@ $( document ).ready(function() {
 							counter++;
 							console.log(gameArray);
               ifWinner();
-
+              ifTie();
               let data = {
                  "game": {
                    "cell": {
@@ -196,7 +197,7 @@ $( document ).ready(function() {
 	        }
 				}
        }
-       ifTie();
+
     	});
 
 
@@ -211,7 +212,7 @@ $( document ).ready(function() {
   						gameArray[1] = "x";
   						counter++;
               ifWinner();
-
+              ifTie();
               let data = {
                  "game": {
                    "cell": {
@@ -235,7 +236,7 @@ $( document ).ready(function() {
   						gameArray[1] = "o";
   						counter++;
               ifWinner();
-
+              ifTie();
               let data = {
                  "game": {
                    "cell": {
@@ -253,7 +254,7 @@ $( document ).ready(function() {
   		    }
   			}
        }
-       ifTie();
+
 	    });
 
 
@@ -267,7 +268,7 @@ $( document ).ready(function() {
   						gameArray[2] = "x";
   						counter++;
               ifWinner();
-
+              ifTie();
               let data = {
                  "game": {
                    "cell": {
@@ -289,7 +290,7 @@ $( document ).ready(function() {
   						gameArray[2] = "o";
   						counter++;
               ifWinner();
-
+              ifTie();
               let data = {
                  "game": {
                    "cell": {
@@ -308,7 +309,7 @@ $( document ).ready(function() {
   				}
   			}
        }
-       ifTie();
+
     	});
 
     $("#divFour").on("click", function(){
@@ -323,7 +324,7 @@ $( document ).ready(function() {
   						gameArray[3] = "x";
   						counter++;
               ifWinner();
-
+              ifTie();
               let data = {
                  "game": {
                    "cell": {
@@ -345,7 +346,7 @@ $( document ).ready(function() {
   						gameArray[3] = "o";
   						counter++;
               ifWinner();
-
+              ifTie();
               let data = {
                  "game": {
                    "cell": {
@@ -363,7 +364,7 @@ $( document ).ready(function() {
   				}
   			}
       }
-      ifTie();
+
 		});
 
      $("#divFive").on("click", function(){
@@ -376,7 +377,7 @@ $( document ).ready(function() {
   						 gameArray[4] = "x";
   						 counter++;
                ifWinner();
-
+               ifTie();
                let data = {
                   "game": {
                     "cell": {
@@ -398,7 +399,7 @@ $( document ).ready(function() {
   						 gameArray[4] = "o";
   						 counter++;
                ifWinner();
-
+               ifTie();
                let data = {
                   "game": {
                     "cell": {
@@ -416,7 +417,7 @@ $( document ).ready(function() {
   				 }
   			 }
         }
-        ifTie();
+
   		});
 
      $("#divSix").on("click", function(){
@@ -429,7 +430,7 @@ $( document ).ready(function() {
   						 gameArray[5] = "x";
   						 counter++;
                ifWinner();
-
+               ifTie();
                let data = {
                   "game": {
                     "cell": {
@@ -451,7 +452,7 @@ $( document ).ready(function() {
   						 gameArray[5] = "o";
   						 counter++;
                ifWinner();
-
+               ifTie();
                let data = {
                   "game": {
                     "cell": {
@@ -469,7 +470,7 @@ $( document ).ready(function() {
   				 }
   			 }
        }
-       ifTie();
+
       });
 
      $("#divSeven").on("click",function(){
@@ -482,7 +483,7 @@ $( document ).ready(function() {
   						 gameArray[6] = "x";
   						 counter++;
                ifWinner();
-
+               ifTie();
                let data = {
                   "game": {
                     "cell": {
@@ -504,7 +505,7 @@ $( document ).ready(function() {
   						 gameArray[6] = "o";
   						 counter++;
                ifWinner();
-
+               ifTie();
                let data = {
                   "game": {
                     "cell": {
@@ -522,7 +523,7 @@ $( document ).ready(function() {
   				 }
   			 }
        }
-       ifTie();
+
 			});
 
      $("#divEight").on("click", function(){
@@ -535,7 +536,7 @@ $( document ).ready(function() {
   						gameArray[7] = "x";
   						counter++;
               ifWinner();
-
+              ifTie();
               let data = {
                  "game": {
                    "cell": {
@@ -557,7 +558,7 @@ $( document ).ready(function() {
   						gameArray[7] = "o";
   						counter++;
               ifWinner();
-
+              ifTie();
               let data = {
                  "game": {
                    "cell": {
@@ -575,7 +576,7 @@ $( document ).ready(function() {
    				}
    			}
       }
-      ifTie();
+
 		});
 
      $("#divNine").on("click", function(){
@@ -588,7 +589,7 @@ $( document ).ready(function() {
 						gameArray[8] = "x";
 						counter++;
             ifWinner();
-
+            ifTie();
             let data = {
                "game": {
                  "cell": {
@@ -610,7 +611,7 @@ $( document ).ready(function() {
 						gameArray[8] = "o";
 						counter++;
             ifWinner();
-
+            ifTie();
             let data = {
                "game": {
                  "cell": {
@@ -628,7 +629,7 @@ $( document ).ready(function() {
 				}
 			}
     }
-    ifTie();
+
 		});
 
 		$("#resetButton").on("click", function( event ) {
