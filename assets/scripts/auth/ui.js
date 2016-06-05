@@ -5,39 +5,18 @@ const app = require('../app.js');
 const success = (data) => {
 if(data)
  {
-  console.log(data);
+  // console.log(data);
  }
  else
  {
-  console.log("Changed password successfully");
+  // console.log("Changed password successfully");
  }
 };
 
-// const successCreateGame = (data) => {
-// if(data)
-//  {
-//   console.log(data);
-//  }
-//  else
-//  {
-//   console.log("Created a game");
-//  }
-// };
 
 const successGetGames = (data) => {
-// if(data)
-//  {
-
   app.games = data.games;
-  console.log(app.games);
-  //this first array works
-  // $("#GET-to-site").text(app.games[0].cells);
-  $("#GET-to-site").text("Thus far, the player has played " + app.games.length + "games.");
-//  }
-//  else
-//  {
-//   console.log("Got Games!");
-//  }
+  $("#GET-to-site").text("Thus far, the player has played " + app.games.length + " games.");
 };
 
 const failure = (error) => {
@@ -46,21 +25,20 @@ const failure = (error) => {
 
 const signInSuccess = function (data){
 app.user = data.user;
-console.log(data);
+// console.log(data);
 };
 
 const signOutSuccess = function (){
   app.user = null;
-  console.log(app);
+  // console.log(app);
 };
 
 const successCreateGame = function (data){
-console.log("this is data");
-console.log(data);
-// let gameID = data.game.id;
+// console.log("this is data");
+// console.log(data);
 app.game = data.game;
 // console.log(gameID);
-console.log(app.game.id);
+// console.log(app.game.id);
 };
 
 module.exports = {

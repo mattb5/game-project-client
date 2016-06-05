@@ -17,8 +17,6 @@ const signUp = (data) => {
 //line 9 and line 17 are doing the same thing, when we use single line
 
 const signIn = (signInData) => {
-  console.log('this is the signInData' );
-  console.log(signInData);
   return $.ajax ({
     url: app.host + '/sign-in',
     method: 'POST',
@@ -27,7 +25,6 @@ const signIn = (signInData) => {
 };
 
 const signOut = function (){
-    console.log(app.user);
     return $.ajax ({
       url: app.host + '/sign-out/' + app.user.id,
       method: 'DELETE',
@@ -84,7 +81,6 @@ const getGameById = function (gameId) {
 };
 
 const updateGame = function (data){
-  console.log(app.user.email);
   return $.ajax (
         {
         // url: app.host + '/games/' + app.game.id,
