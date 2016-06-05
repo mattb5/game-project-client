@@ -71,6 +71,11 @@ const onGetGameById = function(event)
   .fail(ui.failure);
 };
 
+// const onResetGame = function (event)
+// {
+//   event.preventDefault();
+//   console.log("this is onResetGame firing");
+// };
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);

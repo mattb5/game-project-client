@@ -632,7 +632,7 @@ $( document ).ready(function() {
 
 		});
 
-		$("#resetButton").on("click", function( event ) {
+		$("#resetButton").on("click", function( event ) { 
 				event.preventDefault();
 				counter = 0;
 				gameArray = ["","","","","","","","","",];
