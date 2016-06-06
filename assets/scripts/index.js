@@ -17,7 +17,6 @@ const ifTie = function () {
         {
           if (winnerBool)
           {
-            console.log(gameArray);
             alert("We have a cat's draw! Meow Meow!");
             winnerBool = false;
           }
@@ -622,7 +621,7 @@ $( document ).ready(function() {
 				// $("#divOne").removeClass();
 				$("div").removeClass();
          events.onCreateGame(event);
-    
+
       });
 
     });
