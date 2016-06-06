@@ -12,7 +12,6 @@ const ui = require('./ui');
 const onSignUp = function (event){
   event.preventDefault();
   let data = getFormFields(event.target);
-  // console.log(data);
   api.signUp(data)
   .done(ui.success)
   .fail(ui.failure);
@@ -21,8 +20,6 @@ const onSignUp = function (event){
 const onSignIn = function (event){
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log("this is data: ");
-  console.log(data);
   api.signIn(data)
   .done(ui.signInSuccess)
   .fail(ui.failure);
@@ -38,11 +35,7 @@ const onSignOut = function (event) {
 
 const onChangePassword = function(event){
   event.preventDefault();
-  console.log("this is event" );
-  console.log(event);
-
   let data = getFormFields(event.target);
-  console.log(data);
   api.changePassword(data)
   .done(ui.success)
   .fail(ui.failure);
@@ -68,7 +61,6 @@ const onGetGameById = function(event)
 {
   event.preventDefault();
   let gameId = $('#getGameByIdText').val();
-  console.log(gameId);
   api.getGameById(gameId)
   .done(ui.successGetGames)
   .fail(ui.failure);
