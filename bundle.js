@@ -42,7 +42,6 @@ webpackJsonp([0],[
 	var ifTie = function ifTie() {
 	  if (gameArray[0] !== "" && gameArray[1] !== "" && gameArray[2] !== "" && gameArray[3] !== "" && gameArray[4] !== "" && gameArray[5] !== "" && gameArray[6] !== "" && gameArray[7] !== "" && gameArray[8] !== "") {
 	    if (winnerBool) {
-	      console.log(gameArray);
 	      alert("We have a cat's draw! Meow Meow!");
 	      winnerBool = false;
 	    }
