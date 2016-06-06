@@ -717,15 +717,12 @@ webpackJsonp([0],[
 	var onSignUp = function onSignUp(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  // console.log(data);
 	  api.signUp(data).done(ui.success).fail(ui.failure);
 	};
 
 	var onSignIn = function onSignIn(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  console.log("this is data: ");
-	  console.log(data);
 	  api.signIn(data).done(ui.signInSuccess).fail(ui.failure);
 	};
 
@@ -736,11 +733,7 @@ webpackJsonp([0],[
 
 	var onChangePassword = function onChangePassword(event) {
 	  event.preventDefault();
-	  console.log("this is event");
-	  console.log(event);
-
 	  var data = getFormFields(event.target);
-	  console.log(data);
 	  api.changePassword(data).done(ui.success).fail(ui.failure);
 	};
 
@@ -757,7 +750,6 @@ webpackJsonp([0],[
 	var onGetGameById = function onGetGameById(event) {
 	  event.preventDefault();
 	  var gameId = $('#getGameByIdText').val();
-	  console.log(gameId);
 	  api.getGameById(gameId).done(ui.successGetGames).fail(ui.failure);
 	};
 
