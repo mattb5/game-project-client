@@ -1,0 +1,34 @@
+section {
+  /*position: static;*/
+  min-width: 650px;
+
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  border-width: 3px;
+  border-style: solid;
+  float: left;
+}
+
+
+#divFour {
+	clear: both;
+}
+
+#divSeven{
+	clear: both;
+}
+
+.xBox {
+	background-image: url(x.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.oBox{
+	background-image: url(o.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}

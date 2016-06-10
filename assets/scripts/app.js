@@ -1,6 +1,5 @@
 'use strict';
 
 module.exports= {
-  host: 'http://localhost:3000',
-  user:
+  host: 'http://tic-tac-toe.wdibos.com',
 };
