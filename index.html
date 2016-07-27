@@ -10,7 +10,75 @@
    </head>
 
     <body class="container-fluid">
-      <form id="sign-up">
+
+    <header>
+      <h1>Tic Tac Toe</h1>
+
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        LogIn / LogOut
+      </button>
+    </header>
+
+        <!-- Button trigger modal -->
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body">
+              <!-- start of modal content -->
+              <form id="sign-up">
+                <fieldset>
+                  <legend>Sign up!</legend>
+                  <input type ="text" name= "credentials[email]" placeholder="email">
+                  <input type ="password" name= "credentials[password]" placeholder="password">
+                  <input type ="password" name= "credentials[password_confirmation]" placeholder="password confirmation">
+                  <input type="submit" name="submit" value="Sign up!">
+                </fieldset>
+              </form>
+
+              <form id="sign-in">
+                <fieldset>
+                  <legend>Sign in!</legend>
+                  <input type ="text" name= "credentials[email]" placeholder="email">
+                  <input type ="password" name= "credentials[password]" placeholder="password">
+                  <input type="submit" name="submit" value="Sign in!">
+                </fieldset>
+              </form>
+
+              <form id="sign-out">
+                <fieldset>
+                  <legend>Sign out!</legend>
+                  <input class="sign-out" type="submit" name="submit" value="Sign out!">
+                </fieldset>
+              </form>
+
+              <form id="change-password">
+                <fieldset>
+                  <legend>Change password!!</legend>
+                  <input type ="text" name= "passwords[old]" placeholder="old password">
+                  <input type ="password" name= "passwords[new]" placeholder="new password">
+                  <input type="submit" name="submit" value="Change Password!!!!!!!!!!!!!!!!">
+                </fieldset>
+              </form>
+
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- <form id="sign-up">
         <fieldset>
           <legend>Sign up!</legend>
           <input type ="text" name= "credentials[email]" placeholder="email">
@@ -43,12 +111,12 @@
           <input type ="password" name= "passwords[new]" placeholder="new password">
           <input type="submit" name="submit" value="Change Password!!!!!!!!!!!!!!!!">
         </fieldset>
-      </form>
+      </form> -->
 
 
 
 
-      <h1>Tic Tac Toe</h1>
+      <!-- <h1>Tic Tac Toe</h1>
       <h3>Instructions</h3>
         <ol>
           <li>If new to site, first complete sign-up form!</li>
@@ -60,44 +128,52 @@
           <li>Enjoy a round of Tic-Tac-Toe with your friend.  Good luck!</li>
           <li>To clear the board and start a new game, click "Start New Game" once again</li>
           <li>To view how many games you've played in your account, click the Get Games button</li>
-        </ol>
+        </ol> -->
 
-      <section>
-        <div id='divOne'></div>
-        <div id='divTwo'></div>
-        <div id='divThree'></div>
 
-        <div id='divFour'></div>
-        <div id='divFive'></div>
-        <div id='divSix'></div>
+      <section class="game-board">
+        <div class='tic' id='divOne'></div>
+        <div class='tic' id='divTwo'></div>
+        <div class='tic' id='divThree'></div>
 
-        <div id='divSeven'></div>
-        <div id='divEight'></div>
-        <div id='divNine'></div>
+        <div class='tic' id='divFour'></div>
+        <div class='tic' id='divFive'></div>
+        <div class='tic' id='divSix'></div>
+
+        <div class='tic' id='divSeven'></div>
+        <div class='tic' id='divEight'></div>
+        <div class='tic' id='divNine'></div>
       </section>
+<!--start of button sections  -->
 
-      <form id ="resetButton">
-        <input type="submit" value="Start New Game">
-      </form>
 
-      <!-- <form id ="create-game">
-        <input type="submit" value="Start New Game">
-      </form> -->
+      <div class="buttons">
+          <form id ="resetButton" class="left-button">
+            <input type="submit" class="button" value="Start New Game">
+          </form>
 
-      <form id ="get-games">
-        <input type="submit" value="Click For Games Played">
-      </form>
 
-      <!-- <form id="get-game-by-id">
-        <fieldset>
-          <legend>Get Game By ID</legend>
-          <input type ="text" id="getGameByIdText" placeholder="Game ID#">
-          <input type="submit" name="submit" value="Get Game!">
-        </fieldset>
-      </form> -->
 
-      <p id="GET-to-site">
-      </p>
+          <form id ="get-games" class="right-button">
+            <input type="submit" class="button" value="Click For Games Played">
+          </form>
+
+          <p id="GET-to-site">
+          </p>
+      </div>
+
+                    <!-- <form id="get-game-by-id">
+                      <fieldset>
+                        <legend>Get Game By ID</legend>
+                        <input type ="text" id="getGameByIdText" placeholder="Game ID#">
+                        <input type="submit" name="submit" value="Get Game!">
+                      </fieldset>
+                    </form> -->
+
+
+<!-- <!end of button sections  -->
+
+
 
     </body>
 </html>
